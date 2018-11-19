@@ -1,8 +1,8 @@
-const notifications = require('../validation/notifications')
-const ValidateNotification = require('../validation/validateNotification')
-const status = require('../valueObject/status')
+import * as notifications from '../validation/notifications';
+import { ValidateNotification } from '../validation/validateNotification';
+import { status } from '../valueObject/status';
 
-class UserScop {
+export class UserScop {
     
     constructor() { }
     
@@ -49,5 +49,3 @@ class UserScop {
         return results;
     }
 }
-
-module.exports = UserScop

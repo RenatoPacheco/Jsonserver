@@ -1,14 +1,14 @@
-const ValidateNotification = require('../validation/validateNotification')
-const PostScop = require('../scopes/command/userScops/postScop');
-const PutScop = require('../scopes/command/userScops/putScop');
-const PatchScop = require('../scopes/command/userScops/patchScop');
-const DeleteScop = require('../scopes/command/userScops/deleteScop');
+import { ValidateNotification } from '../validation/validateNotification';
+import { PostScop } from '../scopes/command/userScops/postScop';
+import { PutScop } from '../scopes/command/userScops/putScop';
+import { PatchScop } from '../scopes/command/userScops/patchScop';
+import { DeleteScop } from '../scopes/command/userScops/deleteScop';
 
 /**
  * Validate values to run post request
  * @param {object} data values to validate
  */
-const postCmd = function(data) {
+export function postCmd(data) {
     const results = new ValidateNotification();
     const scop = new PostScop();
 
@@ -24,7 +24,7 @@ const postCmd = function(data) {
  * Validate values to run put request
  * @param {object} data values to validate
  */
-const putCmd = function (data) {
+export function putCmd(data) {
     const results = new ValidateNotification();
     const scop = new PutScop();
 
@@ -41,7 +41,7 @@ const putCmd = function (data) {
  * Validate values to run patch request
  * @param {object} data values to validate
  */
-const patchCmd = function (data) {
+export function patchCmd (data) {
     const results = new ValidateNotification();
     const scop = new PatchScop();
 
@@ -58,18 +58,11 @@ const patchCmd = function (data) {
  * Validate values to run delete request
  * @param {object} data values to validate
  */
-const deleteCmd = function(data) {
+export function deleteCmd(data) {
     const results = new ValidateNotification();
     const scop = new DeleteScop();
 
     results.concat(scop.idIsValid(data.id, 'id', 'Id'));
 
     return results;
-}
-
-module.exports = {
-    post : postCmd,
-    put : putCmd,
-    patch: patchCmd,
-    delete: deleteCmd
 }

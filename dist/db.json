@@ -1,0 +1,13 @@
+{
+  "user": [
+    {
+      "id": "7461a7f8-1872-46ac-9d40-0fd21fa84afd",
+      "name": "Renato",
+      "lastname": "Pacheco",
+      "email": "renato.pacheco@outlook.com",
+      "createdIn": "2018-11-17T15:30:45.435",
+      "updatedIn": "2018-11-17T15:30:45.435",
+      "status": "Active"
+    }
+  ]
+}

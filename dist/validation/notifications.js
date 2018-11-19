@@ -1,48 +1,56 @@
-const validates = require('./validates')
-const errorMessage = require('./errorMessage')
-
+"use strict";
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const errorMessage_1 = require("./errorMessage");
+const validates = __importStar(require("./validates"));
 /**
  * Check if value not is null, undefined or empty
- * @param {any} value value to check 
+ * @param {any} value value to check
  * @param {string} reference key reference for group notifications
  * @param {string} name name to show in nitification message, default: Value
  */
-const isRequerid = function(value, reference, name = 'Value') {
+function isRequerid(value, reference, name = 'Value') {
     let result = undefined;
     if (!validates.isRequerid(value)) {
-        result = errorMessage(`${name} is requerid`, reference);
+        result = errorMessage_1.errorMessage(`${name} is requerid`, reference);
     }
     return result;
 }
-
+exports.isRequerid = isRequerid;
 /**
  * Check if value not is number
  * @param {any} value value to check
  * @param {string} reference key reference for group notifications
  * @param {string} name name to show in nitification message, default: Value
  */
-const isNumber = function(value, reference, name = 'Value') {
+function isNumber(value, reference, name = 'Value') {
     let result = undefined;
     if (!validates.isNumber(value)) {
-        result = errorMessage(`${name} not is a number`, reference);
+        result = errorMessage_1.errorMessage(`${name} not is a number`, reference);
     }
     return result;
 }
-
+exports.isNumber = isNumber;
 /**
  * Check if value not is guid
  * @param {any} value value value to check
  * @param {string} reference key reference for group notifications
  * @param {string} name name to show in nitification message, default: Value
  */
-const isGuid = function(value, reference, name = 'Value') {
+function isGuid(value, reference, name = 'Value') {
     let result = undefined;
     if (!validates.isGuid(value)) {
-        result = errorMessage(`${name} not is a guid`, reference);
+        result = errorMessage_1.errorMessage(`${name} not is a guid`, reference);
     }
     return result;
 }
-
+exports.isGuid = isGuid;
 /**
  * Check if value contains max limit characters
  * @param {any} value value value to check
@@ -50,14 +58,14 @@ const isGuid = function(value, reference, name = 'Value') {
  * @param {string} reference key reference for group notifications
  * @param {string} name name to show in nitification message, default: Value
  */
-const isMaxlength = function(value, max, reference, name = 'Value') {
+function isMaxlength(value, max, reference, name = 'Value') {
     let result = undefined;
     if (!validates.isMaxlength(value, max)) {
-        result = errorMessage(`${name} contains more than ${max} characters`, reference);
+        result = errorMessage_1.errorMessage(`${name} contains more than ${max} characters`, reference);
     }
     return result;
 }
-
+exports.isMaxlength = isMaxlength;
 /**
  * Check if value contains less limit characters
  * @param {any} value value value to check
@@ -65,28 +73,28 @@ const isMaxlength = function(value, max, reference, name = 'Value') {
  * @param {string} reference key reference for group notifications
  * @param {string} name name to show in nitification message, default: Value
  */
-const isMinlength = function(value, min, reference, name = 'Value') {
+function isMinlength(value, min, reference, name = 'Value') {
     let result = undefined;
     if (!validates.isMinlength(value, min)) {
-        result = errorMessage(`${name} contains less than ${min} characters`, reference);
+        result = errorMessage_1.errorMessage(`${name} contains less than ${min} characters`, reference);
     }
     return result;
 }
-
+exports.isMinlength = isMinlength;
 /**
  * Check if value is e-mail
- * @param {any} value value to check 
+ * @param {any} value value to check
  * @param {string} reference key reference for group notifications
  * @param {string} name name to show in nitification message, default: Value
  */
-const isEmail = function(value, reference, name = 'Value') {
+function isEmail(value, reference, name = 'Value') {
     let result = undefined;
     if (!validates.isEmail(value)) {
-        result = errorMessage(`${name} not is valid e-mail`, reference);
+        result = errorMessage_1.errorMessage(`${name} not is valid e-mail`, reference);
     }
     return result;
 }
-
+exports.isEmail = isEmail;
 /**
  * Check is value exist in list options
  * @param {any} value value value to check
@@ -94,20 +102,11 @@ const isEmail = function(value, reference, name = 'Value') {
  * @param {string} reference key reference for group notifications
  * @param {string} name name to show in nitification message, default: Value
  */
-const isEnum = function(value, options, reference, name = 'Value') {
+function isEnum(value, options, reference, name = 'Value') {
     let result = undefined;
     if (!validates.isEnum(value, options)) {
-        result = errorMessage(`${name} not is valid`, reference);
+        result = errorMessage_1.errorMessage(`${name} not is valid`, reference);
     }
     return result;
 }
-
-module.exports = {
-    isRequerid : isRequerid,
-    isNumber : isNumber,
-    isGuid: isGuid,
-    isMaxlength: isMaxlength,
-    isMinlength: isMinlength,
-    isEmail: isEmail,
-    isEnum: isEnum
-}
+exports.isEnum = isEnum;

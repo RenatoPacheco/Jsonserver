@@ -1,9 +1,16 @@
-const notifications = require('../../../validation/notifications')
-const UserScop = require('../../userScop')
+import * as notifications from '../../../validation/notifications';
+import { UserScop } from '../../userScop';
 
-class PostScop {
-    constructor() {
-       this.userScop = new UserScop()
+export class PutScop {
+    
+    constructor() { }
+
+    private userScop = new UserScop();
+
+    idIsValid(value, reference, name = 'Value') {
+        const results = this.userScop.idIsValid(value, reference, name);
+        results.validate(notifications.isRequerid(value, reference, reference));
+        return results;
     }
 
     nameIsValid(value, reference, name = 'Value') {
@@ -11,7 +18,7 @@ class PostScop {
         results.validate(notifications.isRequerid(value, reference, reference));
         return results;
     }
-    
+
     lastnameIsValid(value, reference, name = 'Value') {
         const results = this.userScop.lastnameIsValid(value, reference, name);
         results.validate(notifications.isRequerid(value, reference, reference));
@@ -30,6 +37,3 @@ class PostScop {
         return results;
     }
 }
-
-
-module.exports = PostScop

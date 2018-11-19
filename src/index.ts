@@ -1,10 +1,10 @@
-const userCmd = require('./src/commands/userCmd')
-const dateNow = require('./src/helper/dateNow')
-const status = require('./src/valueObject/status')
-const path = require('path')
-const guid = require('guid')
-const request = require('request')
-const jsonServer = require('json-server')
+import * as userCmd from './commands/userCmd';
+import { dateNow } from './helper/dateNow';
+import { status } from './valueObject/status';
+import * as path from 'path';
+import guid from 'guid';
+import request from 'request';
+import jsonServer from 'json-server';
 const server = jsonServer.create()
 const router = jsonServer.router(path.join(__dirname, 'db.json'))
 const middlewares = jsonServer.defaults()
@@ -29,7 +29,7 @@ server.use((req, res, next) => {
 })
 
 server.post('/user', (req, res, next) => {
-  const cmd = userCmd.post(req.body)
+  const cmd = userCmd.postCmd(req.body)
   if (!cmd.isValid()) {
     res.status(400).jsonp(cmd.errors)
     return null
@@ -39,7 +39,7 @@ server.post('/user', (req, res, next) => {
 
 server.put('/user/:id', (req, res, next) => {
   req.body.id = req.params.id;
-  const cmd = userCmd.put(req.body)
+  const cmd = userCmd.putCmd(req.body)
   if (!cmd.isValid()) {
     res.status(400).jsonp(cmd.errors)
     return null
@@ -49,7 +49,7 @@ server.put('/user/:id', (req, res, next) => {
 
 server.patch('/user/:id', (req, res, next) => {
   req.body.id = req.params.id;
-  const cmd = userCmd.patch(req.body)
+  const cmd = userCmd.patchCmd(req.body)
   if (!cmd.isValid()) {
     res.status(400).jsonp(cmd.errors)
     return null
@@ -58,7 +58,7 @@ server.patch('/user/:id', (req, res, next) => {
 })
 
 server.delete('/user/:id', (req, res, next) => {
-  const cmd = userCmd.delete(req.params)
+  const cmd = userCmd.deleteCmd(req.params)
   if (!cmd.isValid()) {
     res.status(400).jsonp(cmd.errors)
     return null

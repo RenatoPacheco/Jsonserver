@@ -1,10 +1,11 @@
-const notifications = require('../../../validation/notifications')
-const UserScop = require('../../userScop')
+import * as notifications from '../../../validation/notifications';
+import { UserScop } from '../../userScop';
 
-class DeleteScop {
-    constructor() {
-       this.userScop = new UserScop()
-    }
+export class DeleteScop {
+    
+    constructor() { }
+
+    private userScop = new UserScop();
 
     idIsValid(value, reference, name = 'Value') {
         const results = this.userScop.idIsValid(value, reference, name);
@@ -12,6 +13,3 @@ class DeleteScop {
         return results;
     }
 }
-
-
-module.exports = DeleteScop

@@ -1,31 +1,30 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 class ValidateNotification {
-    constructor () {
+    constructor() {
         this.errors = [];
     }
-
     /**
      * Return true is not exist errors
      */
-    isValid () {
+    isValid() {
         return this.errors.length === 0;
     }
-
     /**
-     * Concat errors validateNotification in between objects 
+     * Concat errors validateNotification in between objects
      * @param {ValidateNotification} validateNotification value to concat errors
      */
-    concat (validateNotification) {
+    concat(validateNotification) {
         const length = validateNotification.errors.length;
         for (let i = 0; i < length; i++) {
             this.errors.push(validateNotification.errors[i]);
         }
     }
-
     /**
      * Validate notifications
      * @param  {...any} notifications values to validete
      */
-    validate (...notifications) {
+    validate(...notifications) {
         const result = [];
         const length = notifications.length;
         for (let i = 0; i < length; i++) {
@@ -36,13 +35,11 @@ class ValidateNotification {
         this.errors = this.errors.concat(result);
         return result.length === 0;
     }
-
     /**
      * Clear all errors
      */
-    clear () {
+    clear() {
         this.errors = [];
     }
 }
-
-module.exports = ValidateNotification;
+exports.ValidateNotification = ValidateNotification;
