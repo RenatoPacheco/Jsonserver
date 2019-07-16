@@ -4,16 +4,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * Check if value not is null, undefined or empty
  * @param {any} value value to check
  */
-function isRequerid(value) {
+function isRequired(value) {
     return value !== null && value !== undefined;
 }
-exports.isRequerid = isRequerid;
+exports.isRequired = isRequired;
 /**
  * Check if value not is number
  * @param {any} value value to check
  */
 function isNumber(value) {
-    return !isRequerid(value) || /^[0-9]$/.test(value);
+    return !isRequired(value) || /^[0-9]$/.test(value);
 }
 exports.isNumber = isNumber;
 /**
@@ -21,7 +21,7 @@ exports.isNumber = isNumber;
  * @param {any} value value value to check
  */
 function isGuid(value) {
-    return !isRequerid(value) || /^\w{8}-(\w{4}-){3}\w{12}$/.test(value);
+    return !isRequired(value) || /^\w{8}-(\w{4}-){3}\w{12}$/.test(value);
 }
 exports.isGuid = isGuid;
 /**
@@ -29,25 +29,25 @@ exports.isGuid = isGuid;
  * @param {any} value value value to check
  * @param {number} max limit max than characters
  */
-function isMaxlength(value, max) {
-    return !isRequerid(value) || value.length <= max;
+function isMaxLength(value, max) {
+    return !isRequired(value) || value.length <= max;
 }
-exports.isMaxlength = isMaxlength;
+exports.isMaxLength = isMaxLength;
 /**
  * Check if value contains less limit characters
  * @param {any} value value value to check
  * @param {number} min limit less than characters
  */
-function isMinlength(value, min) {
-    return !isRequerid(value) || value.length >= min;
+function isMinLength(value, min) {
+    return !isRequired(value) || value.length >= min;
 }
-exports.isMinlength = isMinlength;
+exports.isMinLength = isMinLength;
 /**
  * Check if value is e-mail
  * @param {any} value value value to check
  */
 function isEmail(value) {
-    return !isRequerid(value) || /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value);
+    return !isRequired(value) || /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value);
 }
 exports.isEmail = isEmail;
 /**
@@ -56,7 +56,7 @@ exports.isEmail = isEmail;
  * @param {Array} options options to check
  */
 function isEnum(value, options) {
-    let result = !isRequerid(value);
+    let result = !isRequired(value);
     if (!result) {
         let keys = Object.keys(options);
         let length = keys.length;

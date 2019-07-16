@@ -7,7 +7,7 @@ import request from 'request';
 import jsonServer from 'json-server';
 const server = jsonServer.create()
 const router = jsonServer.router(path.join(__dirname, 'db.json'))
-const middlewares = jsonServer.defaults()
+const middleWares = jsonServer.defaults()
 const port = 3000
 const host = `http://localhost:${port}`;
 
@@ -70,7 +70,7 @@ server.delete('/user/:id', (req, res, next) => {
   });
 })
 
-server.use(middlewares)
+server.use(middleWares)
 server.use(router)
 server.listen(port, () => {
   console.log(`JSON Server is running in ${host}`)

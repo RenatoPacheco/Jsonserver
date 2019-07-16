@@ -13,7 +13,7 @@ export function postCmd(data) {
     const scop = new PostScop();
 
     results.concat(scop.nameIsValid(data.name, 'name', 'Name'));
-    results.concat(scop.lastnameIsValid(data.lastname, 'lastname', 'Lastname'));
+    results.concat(scop.lastNameIsValid(data.lastName, 'lastName', 'Lastname'));
     results.concat(scop.emailIsValid(data.email, 'email', 'E-mail'));
     results.concat(scop.statusIsValid(data.status, 'status', 'Status'));
 
@@ -30,7 +30,7 @@ export function putCmd(data) {
 
     results.concat(scop.idIsValid(data.id, 'id', 'Id'));
     results.concat(scop.nameIsValid(data.name, 'name', 'Name'));
-    results.concat(scop.lastnameIsValid(data.lastname, 'lastname', 'Lastname'));
+    results.concat(scop.lastNameIsValid(data.lastName, 'lastName', 'Lastname'));
     results.concat(scop.emailIsValid(data.email, 'email', 'E-mail'));
     results.concat(scop.statusIsValid(data.status, 'status', 'Status'));
 
@@ -47,7 +47,7 @@ export function patchCmd (data) {
 
     results.concat(scop.idIsValid(data.id, 'id', 'Id'));
     results.concat(scop.nameIsValid(data.name, 'name', 'Name'));
-    results.concat(scop.lastnameIsValid(data.lastname, 'lastname', 'Lastname'));
+    results.concat(scop.lastNameIsValid(data.lastName, 'lastName', 'Lastname'));
     results.concat(scop.emailIsValid(data.email, 'email', 'E-mail'));
     results.concat(scop.statusIsValid(data.status, 'status', 'Status'));
 

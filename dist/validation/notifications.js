@@ -13,21 +13,21 @@ const validates = __importStar(require("./validates"));
  * Check if value not is null, undefined or empty
  * @param {any} value value to check
  * @param {string} reference key reference for group notifications
- * @param {string} name name to show in nitification message, default: Value
+ * @param {string} name name to show in notification message, default: Value
  */
-function isRequerid(value, reference, name = 'Value') {
+function isRequired(value, reference, name = 'Value') {
     let result = undefined;
-    if (!validates.isRequerid(value)) {
-        result = errorMessage_1.errorMessage(`${name} is requerid`, reference);
+    if (!validates.isRequired(value)) {
+        result = errorMessage_1.errorMessage(`${name} is required`, reference);
     }
     return result;
 }
-exports.isRequerid = isRequerid;
+exports.isRequired = isRequired;
 /**
  * Check if value not is number
  * @param {any} value value to check
  * @param {string} reference key reference for group notifications
- * @param {string} name name to show in nitification message, default: Value
+ * @param {string} name name to show in notification message, default: Value
  */
 function isNumber(value, reference, name = 'Value') {
     let result = undefined;
@@ -41,7 +41,7 @@ exports.isNumber = isNumber;
  * Check if value not is guid
  * @param {any} value value value to check
  * @param {string} reference key reference for group notifications
- * @param {string} name name to show in nitification message, default: Value
+ * @param {string} name name to show in notification message, default: Value
  */
 function isGuid(value, reference, name = 'Value') {
     let result = undefined;
@@ -56,36 +56,36 @@ exports.isGuid = isGuid;
  * @param {any} value value value to check
  * @param {number} max limit max than characters
  * @param {string} reference key reference for group notifications
- * @param {string} name name to show in nitification message, default: Value
+ * @param {string} name name to show in notification message, default: Value
  */
-function isMaxlength(value, max, reference, name = 'Value') {
+function isMaxLength(value, max, reference, name = 'Value') {
     let result = undefined;
-    if (!validates.isMaxlength(value, max)) {
+    if (!validates.isMaxLength(value, max)) {
         result = errorMessage_1.errorMessage(`${name} contains more than ${max} characters`, reference);
     }
     return result;
 }
-exports.isMaxlength = isMaxlength;
+exports.isMaxLength = isMaxLength;
 /**
  * Check if value contains less limit characters
  * @param {any} value value value to check
  * @param {number} min limit less than characters
  * @param {string} reference key reference for group notifications
- * @param {string} name name to show in nitification message, default: Value
+ * @param {string} name name to show in notification message, default: Value
  */
-function isMinlength(value, min, reference, name = 'Value') {
+function isMinLength(value, min, reference, name = 'Value') {
     let result = undefined;
-    if (!validates.isMinlength(value, min)) {
+    if (!validates.isMinLength(value, min)) {
         result = errorMessage_1.errorMessage(`${name} contains less than ${min} characters`, reference);
     }
     return result;
 }
-exports.isMinlength = isMinlength;
+exports.isMinLength = isMinLength;
 /**
  * Check if value is e-mail
  * @param {any} value value to check
  * @param {string} reference key reference for group notifications
- * @param {string} name name to show in nitification message, default: Value
+ * @param {string} name name to show in notification message, default: Value
  */
 function isEmail(value, reference, name = 'Value') {
     let result = undefined;
@@ -100,7 +100,7 @@ exports.isEmail = isEmail;
  * @param {any} value value value to check
  * @param {Array} options options to check
  * @param {string} reference key reference for group notifications
- * @param {string} name name to show in nitification message, default: Value
+ * @param {string} name name to show in notification message, default: Value
  */
 function isEnum(value, options, reference, name = 'Value') {
     let result = undefined;

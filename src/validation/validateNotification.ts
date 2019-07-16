@@ -26,7 +26,7 @@ export class ValidateNotification {
 
     /**
      * Validate notifications
-     * @param  {...any} notifications values to validete
+     * @param  {...any} notifications values to validate
      */
     validate (...notifications: IErrorMessage[]): boolean {
         const result: IErrorMessage[] = [];

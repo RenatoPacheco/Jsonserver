@@ -19,17 +19,17 @@ class UserScop {
     }
     nameIsValid(value, reference, name = 'Value') {
         const results = new validateNotification_1.ValidateNotification();
-        results.validate(notifications.isMaxlength(value, 100, reference, name), notifications.isMinlength(value, 3, reference, name));
+        results.validate(notifications.isMaxLength(value, 100, reference, name), notifications.isMinLength(value, 3, reference, name));
         return results;
     }
-    lastnameIsValid(value, reference, name = 'Value') {
+    lastNameIsValid(value, reference, name = 'Value') {
         const results = new validateNotification_1.ValidateNotification();
-        results.validate(notifications.isMaxlength(value, 100, reference, name), notifications.isMinlength(value, 3, reference, name));
+        results.validate(notifications.isMaxLength(value, 100, reference, name), notifications.isMinLength(value, 3, reference, name));
         return results;
     }
     emailIsValid(value, reference, name = 'Value') {
         const results = new validateNotification_1.ValidateNotification();
-        results.validate(notifications.isMaxlength(value, 300, reference, name), notifications.isEmail(value, reference, name));
+        results.validate(notifications.isMaxLength(value, 300, reference, name), notifications.isEmail(value, reference, name));
         return results;
     }
     statusIsValid(value, reference, name = 'Value') {

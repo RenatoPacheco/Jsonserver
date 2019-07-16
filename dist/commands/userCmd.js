@@ -13,7 +13,7 @@ function postCmd(data) {
     const results = new validateNotification_1.ValidateNotification();
     const scop = new postScop_1.PostScop();
     results.concat(scop.nameIsValid(data.name, 'name', 'Name'));
-    results.concat(scop.lastnameIsValid(data.lastname, 'lastname', 'Lastname'));
+    results.concat(scop.lastNameIsValid(data.lastName, 'lastName', 'Lastname'));
     results.concat(scop.emailIsValid(data.email, 'email', 'E-mail'));
     results.concat(scop.statusIsValid(data.status, 'status', 'Status'));
     return results;
@@ -28,7 +28,7 @@ function putCmd(data) {
     const scop = new putScop_1.PutScop();
     results.concat(scop.idIsValid(data.id, 'id', 'Id'));
     results.concat(scop.nameIsValid(data.name, 'name', 'Name'));
-    results.concat(scop.lastnameIsValid(data.lastname, 'lastname', 'Lastname'));
+    results.concat(scop.lastNameIsValid(data.lastName, 'lastName', 'Lastname'));
     results.concat(scop.emailIsValid(data.email, 'email', 'E-mail'));
     results.concat(scop.statusIsValid(data.status, 'status', 'Status'));
     return results;
@@ -43,7 +43,7 @@ function patchCmd(data) {
     const scop = new patchScop_1.PatchScop();
     results.concat(scop.idIsValid(data.id, 'id', 'Id'));
     results.concat(scop.nameIsValid(data.name, 'name', 'Name'));
-    results.concat(scop.lastnameIsValid(data.lastname, 'lastname', 'Lastname'));
+    results.concat(scop.lastNameIsValid(data.lastName, 'lastName', 'Lastname'));
     results.concat(scop.emailIsValid(data.email, 'email', 'E-mail'));
     results.concat(scop.statusIsValid(data.status, 'status', 'Status'));
     return results;

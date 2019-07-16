@@ -19,7 +19,7 @@ const request_1 = __importDefault(require("request"));
 const json_server_1 = __importDefault(require("json-server"));
 const server = json_server_1.default.create();
 const router = json_server_1.default.router(path.join(__dirname, 'db.json'));
-const middlewares = json_server_1.default.defaults();
+const middleWares = json_server_1.default.defaults();
 const port = 3000;
 const host = `http://localhost:${port}`;
 server.use(json_server_1.default.bodyParser);
@@ -77,7 +77,7 @@ server.delete('/user/:id', (req, res, next) => {
         res.send(response.body);
     });
 });
-server.use(middlewares);
+server.use(middleWares);
 server.use(router);
 server.listen(port, () => {
     console.log(`JSON Server is running in ${host}`);

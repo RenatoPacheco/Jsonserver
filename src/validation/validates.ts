@@ -2,7 +2,7 @@
  * Check if value not is null, undefined or empty
  * @param {any} value value to check 
  */
-export function isRequerid(value: any): boolean {
+export function isRequired(value: any): boolean {
     return value !== null && value !== undefined;
 }
 
@@ -11,7 +11,7 @@ export function isRequerid(value: any): boolean {
  * @param {any} value value to check
  */
 export function isNumber(value): boolean {
-    return !isRequerid(value) || /^[0-9]$/.test(value);
+    return !isRequired(value) || /^[0-9]$/.test(value);
 }
 
 /**
@@ -19,7 +19,7 @@ export function isNumber(value): boolean {
  * @param {any} value value value to check
  */
 export function isGuid(value): boolean {
-    return !isRequerid(value) || /^\w{8}-(\w{4}-){3}\w{12}$/.test(value);
+    return !isRequired(value) || /^\w{8}-(\w{4}-){3}\w{12}$/.test(value);
 }
 
 /**
@@ -27,8 +27,8 @@ export function isGuid(value): boolean {
  * @param {any} value value value to check
  * @param {number} max limit max than characters
  */
-export function isMaxlength(value, max): boolean {
-    return !isRequerid(value) || value.length <= max;
+export function isMaxLength(value, max): boolean {
+    return !isRequired(value) || value.length <= max;
 }
 
 /**
@@ -36,8 +36,8 @@ export function isMaxlength(value, max): boolean {
  * @param {any} value value value to check
  * @param {number} min limit less than characters
  */
-export function isMinlength(value, min): boolean {
-    return !isRequerid(value) || value.length >= min;
+export function isMinLength(value, min): boolean {
+    return !isRequired(value) || value.length >= min;
 }
 
 /**
@@ -45,7 +45,7 @@ export function isMinlength(value, min): boolean {
  * @param {any} value value value to check
  */
 export function isEmail(value): boolean {
-    return !isRequerid(value) || /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value);
+    return !isRequired(value) || /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value);
 }
 
 /**
@@ -54,7 +54,7 @@ export function isEmail(value): boolean {
  * @param {Array} options options to check
  */
 export function isEnum(value, options): boolean {
-    let result: boolean = !isRequerid(value);
+    let result: boolean = !isRequired(value);
     if (!result) {
         let keys: string[] = Object.keys(options);
         let length: number = keys.length;

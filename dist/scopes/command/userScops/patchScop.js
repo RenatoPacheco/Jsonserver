@@ -15,15 +15,15 @@ class PatchScop {
     }
     idIsValid(value, reference, name = 'Value') {
         const results = this.userScop.idIsValid(value, reference, name);
-        results.validate(notifications.isRequerid(value, reference, reference));
+        results.validate(notifications.isRequired(value, reference, reference));
         return results;
     }
     nameIsValid(value, reference, name = 'Value') {
         const results = this.userScop.nameIsValid(value, reference, name);
         return results;
     }
-    lastnameIsValid(value, reference, name = 'Value') {
-        const results = this.userScop.lastnameIsValid(value, reference, name);
+    lastNameIsValid(value, reference, name = 'Value') {
+        const results = this.userScop.lastNameIsValid(value, reference, name);
         return results;
     }
     emailIsValid(value, reference, name = 'Value') {

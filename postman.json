@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "23d23706-36b6-4c5c-a9b4-df39fd3de957",
+		"_postman_id": "58dfb43d-e34f-42df-b694-65481fd2eb6c",
 		"name": "Jsonserver",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -29,7 +29,7 @@
 									"type": "text"
 								},
 								{
-									"key": "lastname",
+									"key": "lastName",
 									"value": "Bevilacqua Pacheco",
 									"type": "text"
 								},
@@ -46,12 +46,10 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/user",
-							"protocol": "http",
+							"raw": "{{host}}/user",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "3000",
 							"path": [
 								"user"
 							]
@@ -64,20 +62,20 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
-							"raw": "http://localhost:3000/user/04005d33-3f97-f9f5-8053-b86a47dae7c1",
-							"protocol": "http",
+							"raw": "{{host}}/user/:user",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "3000",
 							"path": [
 								"user",
-								"04005d33-3f97-f9f5-8053-b86a47dae7c1"
+								":user"
+							],
+							"variable": [
+								{
+									"key": "user",
+									"value": "04005d33-3f97-f9f5-8053-b86a47dae7c1"
+								}
 							]
 						}
 					},
@@ -88,17 +86,11 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
-							"raw": "http://localhost:3000/user",
-							"protocol": "http",
+							"raw": "{{host}}/user",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "3000",
 							"path": [
 								"user"
 							]
@@ -127,7 +119,7 @@
 									"type": "text"
 								},
 								{
-									"key": "lastname",
+									"key": "lastName",
 									"value": "Bevilacqua Pacheco",
 									"type": "text"
 								},
@@ -144,15 +136,19 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/user/04005d33-3f97-f9f5-8053-b86a47dae7c1",
-							"protocol": "http",
+							"raw": "{{host}}/user/:user",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "3000",
 							"path": [
 								"user",
-								"04005d33-3f97-f9f5-8053-b86a47dae7c1"
+								":user"
+							],
+							"variable": [
+								{
+									"key": "user",
+									"value": "04005d33-3f97-f9f5-8053-b86a47dae7c1"
+								}
 							]
 						}
 					},
@@ -179,7 +175,7 @@
 									"type": "text"
 								},
 								{
-									"key": "lastname",
+									"key": "lastName",
 									"value": "Bevilacqua Pacheco",
 									"type": "text"
 								},
@@ -196,15 +192,19 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/user/04005d33-3f97-f9f5-8053-b86a47dae7c1",
-							"protocol": "http",
+							"raw": "{{host}}/user/:user",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "3000",
 							"path": [
 								"user",
-								"04005d33-3f97-f9f5-8053-b86a47dae7c1"
+								":user"
+							],
+							"variable": [
+								{
+									"key": "user",
+									"value": "04005d33-3f97-f9f5-8053-b86a47dae7c1"
+								}
 							]
 						}
 					},
@@ -220,15 +220,19 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:3000/user/04005d33-3f97-f9f5-8053-b86a47dae7c1",
-							"protocol": "http",
+							"raw": "{{host}}/user/:user",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "3000",
 							"path": [
 								"user",
-								"04005d33-3f97-f9f5-8053-b86a47dae7c1"
+								":user"
+							],
+							"variable": [
+								{
+									"key": "user",
+									"value": "04005d33-3f97-f9f5-8053-b86a47dae7c1"
+								}
 							]
 						}
 					},

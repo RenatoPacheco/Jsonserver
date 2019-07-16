@@ -15,7 +15,7 @@ class DeleteScop {
     }
     idIsValid(value, reference, name = 'Value') {
         const results = this.userScop.idIsValid(value, reference, name);
-        results.validate(notifications.isRequerid(value, reference, reference));
+        results.validate(notifications.isRequired(value, reference, reference));
         return results;
     }
 }
