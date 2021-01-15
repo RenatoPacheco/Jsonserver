@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.ValidateNotification = void 0;
 class ValidateNotification {
     constructor() {
         this.errors = [];

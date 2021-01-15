@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.dateNow = void 0;
 function twoPlaces(value) {
     return value < 10 ? `0${value}` : value.toString();
 }

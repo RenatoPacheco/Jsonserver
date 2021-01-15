@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.deleteCmd = exports.patchCmd = exports.putCmd = exports.postCmd = void 0;
 const validateNotification_1 = require("../validation/validateNotification");
 const postScop_1 = require("../scopes/command/userScops/postScop");
 const putScop_1 = require("../scopes/command/userScops/putScop");
