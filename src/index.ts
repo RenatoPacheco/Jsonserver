@@ -1,5 +1,4 @@
 import * as userCmd from './commands/userCmd';
-import { dateNow } from './helper/dateNow';
 import { status } from './valueObject/status';
 import * as path from 'path';
 import * as fs from 'fs';
@@ -21,12 +20,12 @@ server.use(jsonServer.bodyParser)
 server.use((req, res, next) => {
   if (req.method === 'POST') {
     req.body.id = guid.raw()
-    req.body.createdIn = dateNow()
-    req.body.updatedIn = dateNow()
+    req.body.createdIn = new Date().toISOString()
+    req.body.updatedIn = new Date().toISOString()
   } else if(req.method === 'PUT') {
-    req.body.updatedIn = dateNow()
+    req.body.updatedIn = new Date().toISOString()
   } else if(req.method === 'PATCH') {
-    req.body.updatedIn = dateNow()
+    req.body.updatedIn = new Date().toISOString()
   }
   next()
 })
