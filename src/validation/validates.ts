@@ -3,14 +3,23 @@
  * @param {any} value value to check 
  */
 export function isRequired(value: any): boolean {
-    return value !== null && value !== undefined;
+    let type: string = typeof value;
+    let result: boolean = value !== null && value !== undefined;
+    if (result && type === 'string') {
+        result = value.trim().length > 0;
+    } else if (result && type === 'object') {
+        result = Object.keys(value).length > 0;
+    } else if (result && type === 'array') {
+        result = value.length > 0;
+    }
+    return result;
 }
 
 /**
  * Check if value not is number
  * @param {any} value value to check
  */
-export function isNumber(value): boolean {
+export function isNumber(value: any): boolean {
     return !isRequired(value) || /^[0-9]$/.test(value);
 }
 
@@ -18,7 +27,7 @@ export function isNumber(value): boolean {
  * Check if value not is guid
  * @param {any} value value value to check
  */
-export function isGuid(value): boolean {
+export function isGuid(value: any): boolean {
     return !isRequired(value) || /^\w{8}-(\w{4}-){3}\w{12}$/.test(value);
 }
 
@@ -27,7 +36,7 @@ export function isGuid(value): boolean {
  * @param {any} value value value to check
  * @param {number} max limit max than characters
  */
-export function isMaxLength(value, max): boolean {
+export function isMaxLength(value: any, max: number): boolean {
     return !isRequired(value) || value.length <= max;
 }
 
@@ -36,7 +45,7 @@ export function isMaxLength(value, max): boolean {
  * @param {any} value value value to check
  * @param {number} min limit less than characters
  */
-export function isMinLength(value, min): boolean {
+export function isMinLength(value: any, min: number): boolean {
     return !isRequired(value) || value.length >= min;
 }
 
@@ -44,7 +53,7 @@ export function isMinLength(value, min): boolean {
  * Check if value is e-mail
  * @param {any} value value value to check
  */
-export function isEmail(value): boolean {
+export function isEmail(value: any): boolean {
     return !isRequired(value) || /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value);
 }
 
@@ -53,7 +62,7 @@ export function isEmail(value): boolean {
  * @param {any} value value value to check
  * @param {Array} options options to check
  */
-export function isEnum(value, options): boolean {
+export function isEnum(value: any, options: Array<any>): boolean {
     let result: boolean = !isRequired(value);
     if (!result) {
         let keys: string[] = Object.keys(options);
