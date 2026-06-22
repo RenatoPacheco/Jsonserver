@@ -4,11 +4,11 @@ import { dateNow } from '../helper/dateNow';
 export interface IErrorMessage {
     id: guid,
     message: string,
-    reference: string,
+    reference: string|null,
     date: string
 }
 
-export function errorMessage(message: string, reference: string = null): IErrorMessage {
+export function errorMessage(message: string, reference: string|null = null): IErrorMessage {
     return {
         id: guid.create(),
         message: message,

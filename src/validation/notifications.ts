@@ -7,8 +7,8 @@ import * as validates from './validates';
  * @param {string} reference key reference for group notifications
  * @param {string} name name to show in notification message, default: Value
  */
-export function isRequired(value, reference, name = 'Value'): IErrorMessage {
-    let result: IErrorMessage = undefined;
+export function isRequired(value, reference, name = 'Value'): IErrorMessage|undefined {
+    let result: IErrorMessage|undefined = undefined;
     if (!validates.isRequired(value)) {
         result = errorMessage(`${name} is required`, reference);
     }
@@ -21,8 +21,8 @@ export function isRequired(value, reference, name = 'Value'): IErrorMessage {
  * @param {string} reference key reference for group notifications
  * @param {string} name name to show in notification message, default: Value
  */
-export function isNumber(value, reference, name = 'Value') {
-    let result = undefined;
+export function isNumber(value, reference, name = 'Value'): IErrorMessage|undefined {
+    let result: IErrorMessage|undefined = undefined;
     if (!validates.isNumber(value)) {
         result = errorMessage(`${name} not is a number`, reference);
     }
@@ -35,8 +35,8 @@ export function isNumber(value, reference, name = 'Value') {
  * @param {string} reference key reference for group notifications
  * @param {string} name name to show in notification message, default: Value
  */
-export function isGuid(value, reference, name = 'Value') {
-    let result = undefined;
+export function isGuid(value, reference, name = 'Value'): IErrorMessage|undefined {
+    let result: IErrorMessage|undefined = undefined;
     if (!validates.isGuid(value)) {
         result = errorMessage(`${name} not is a guid`, reference);
     }
@@ -50,8 +50,8 @@ export function isGuid(value, reference, name = 'Value') {
  * @param {string} reference key reference for group notifications
  * @param {string} name name to show in notification message, default: Value
  */
-export function isMaxLength(value, max, reference, name = 'Value') {
-    let result = undefined;
+export function isMaxLength(value, max, reference, name = 'Value'): IErrorMessage|undefined {
+    let result: IErrorMessage|undefined = undefined;
     if (!validates.isMaxLength(value, max)) {
         result = errorMessage(`${name} contains more than ${max} characters`, reference);
     }
@@ -65,8 +65,8 @@ export function isMaxLength(value, max, reference, name = 'Value') {
  * @param {string} reference key reference for group notifications
  * @param {string} name name to show in notification message, default: Value
  */
-export function isMinLength(value, min, reference, name = 'Value') {
-    let result = undefined;
+export function isMinLength(value, min, reference, name = 'Value'): IErrorMessage|undefined {
+    let result: IErrorMessage|undefined = undefined;
     if (!validates.isMinLength(value, min)) {
         result = errorMessage(`${name} contains less than ${min} characters`, reference);
     }
@@ -79,8 +79,8 @@ export function isMinLength(value, min, reference, name = 'Value') {
  * @param {string} reference key reference for group notifications
  * @param {string} name name to show in notification message, default: Value
  */
-export function isEmail(value, reference, name = 'Value') {
-    let result = undefined;
+export function isEmail(value, reference, name = 'Value'): IErrorMessage|undefined {
+    let result: IErrorMessage|undefined = undefined;
     if (!validates.isEmail(value)) {
         result = errorMessage(`${name} not is valid e-mail`, reference);
     }
@@ -94,8 +94,8 @@ export function isEmail(value, reference, name = 'Value') {
  * @param {string} reference key reference for group notifications
  * @param {string} name name to show in notification message, default: Value
  */
-export function isEnum(value, options, reference, name = 'Value') {
-    let result = undefined;
+export function isEnum(value, options, reference, name = 'Value'): IErrorMessage|undefined {
+    let result: IErrorMessage|undefined = undefined;
     if (!validates.isEnum(value, options)) {
         result = errorMessage(`${name} not is valid`, reference);
     }

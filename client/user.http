@@ -1,0 +1,33 @@
+@host = http://localhost:3000
+@id = 7461a7f8-1872-46ac-9d40-0fd21fa84afd
+
+### Get all users
+GET {{host}}/user
+
+### Get user by ID
+GET {{host}}/user/{{id}}
+
+### Create user
+POST {{host}}/user
+Content-Type: application/json
+
+{
+  "name": "John",
+  "lastName": "Doe",
+  "email": "john@example.com",
+  "status": "Active"
+}
+
+### Update user
+PUT {{host}}/user/{{id}}
+Content-Type: application/json
+
+{
+  "name": "Jane",
+  "lastName": "Doe",
+  "email": "jane@example.com",
+  "status": "Active"
+}
+
+### Delete user
+DELETE {{host}}/user/{{id}}
